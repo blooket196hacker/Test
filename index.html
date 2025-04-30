@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Safari Toolbox GUI</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .toolbox {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      padding: 1rem;
+    }
+    h2 {
+      cursor: pointer;
+      background: #333;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border-radius: 5px;
+    }
+    .folder {
+      display: none;
+      margin-bottom: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.25rem 0;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+<div class="toolbox">
+  <h2 onclick="toggle('safari')">Safari Hacks</h2>
+  <div id="safari" class="folder">
+    <button onclick="document.title='Math - Google Docs'">Mask Tab</button>
+    <button onclick="for(let i=0;i<50;i++){history.pushState({},'',location.pathname+'?page='+i);}">Fake History</button>
+    <button onclick="document.body.contentEditable=true">Edit Page</button>
+    <button onclick="document.body.contentEditable=false">Stop Editing</button>
+    <button onclick="document.body.style.background='black';document.body.style.color='white'">Dark Mode</button>
+    <button onclick="document.body.style.background='white';document.body.style.color='black'">Light Mode</button>
+    <button onclick="window.scrollTo(0, 0)">Jump Top</button>
+    <button onclick="window.scrollTo(0, document.body.scrollHeight)">Jump Bottom</button>
+    <button onclick="document.body.style.zoom='120%'">Zoom In</button>
+    <button onclick="document.body.style.zoom='80%'">Zoom Out</button>
+    <button onclick="location.reload(true)">Force Reload</button>
+    <button onclick="document.querySelector('.toolbox').remove()">Close Toolbox</button>
+  </div>
+
+  <h2 onclick="toggle('blooket')">Blooket Hacks</h2>
+  <div id="blooket" class="folder">
+    <button onclick="alert('Fake: Auto Answer Enabled')">Auto Answer</button>
+    <button onclick="alert('Fake: God Mode')">God Mode</button>
+    <button onclick="alert('Fake: Tokens Increased')">Increase Tokens</button>
+    <button onclick="alert('Fake: All Blooks Unlocked')">Unlock All Blooks</button>
+  </div>
+
+  <h2 onclick="toggle('kahoot')">Kahoot Hacks</h2>
+  <div id="kahoot" class="folder">
+    <button onclick="alert('Fake: Auto Answer Enabled')">Auto Answer</button>
+    <button onclick="alert('Fake: Speed Hack Enabled')">Speed Hack</button>
+    <button onclick="alert('Fake: Infinite Points')">Infinite Points</button>
+    <button onclick="alert('Fake: Timer Disabled')">Unlimited Time</button>
+  </div>
+
+  <h2 onclick="toggle('random')">Random</h2>
+  <div id="random" class="folder">
+    <button onclick="document.body.innerHTML=document.body.innerHTML.replace(/\w+/g,'🤪')">Emoji Spam</button>
+    <button onclick="document.body.style.backgroundColor='#'+Math.floor(Math.random()*16777215).toString(16)">Random Color</button>
+    <button onclick="alert('🌈 Confetti! (Pretend confetti appears)')">Confetti</button>
+    <button onclick="window.speechSynthesis.speak(new SpeechSynthesisUtterance(document.body.innerText))">Text to Speech</button>
+    <button onclick="let colors=['red','orange','yellow','green','blue','indigo','violet'];let i=0;setInterval(()=>{document.body.style.background=colors[i++%colors.length]},300)">Page Rainbow</button>
+  </div>
+</div>
+
+<script>
+  function toggle(id) {
+    let folder = document.getElementById(id);
+    folder.style.display = folder.style.display === 'block' ? 'none' : 'block';
+  }
+</script>
+</body>
+</html>
 
